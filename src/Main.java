@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 
@@ -17,9 +18,10 @@ class Main {
         double perPersonTip =  totalTipAmount/numOfPeople;
         double perPersonBill =  totalBillCost/numOfPeople;
 
-        System.out.println("Total tip amount: $" + totalTipAmount);
-        System.out.println("Total bill cost: $" + totalBillCost);
-        System.out.println("Tip per Person: $" + perPersonTip);
-        System.out.println("Total bill per person: $" + perPersonBill);
+        DecimalFormat df2 = new DecimalFormat("0.00");
+        System.out.println("Total tip amount: $" + df2.format(totalTipAmount));
+        System.out.println("Total bill cost: $" + df2.format(totalBillCost));
+        System.out.println("Tip per Person: $" +  df2.format(perPersonTip));
+        System.out.println("Total bill per person: $" +  df2.format(perPersonBill));
     }
 }

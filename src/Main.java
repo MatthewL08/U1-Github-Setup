@@ -5,9 +5,9 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("---------------------------------------------------------------");
-        System.out.println("Do not use any symbols when imputing the data below w/o $ or % |");
-        System.out.println("---------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------");
+        System.out.println("Do not use any symbols when imputing the data below (no $ or %) |");
+        System.out.println("----------------------------------------------------------------");
         System.out.print("What is your Bill amount ($) : ");
         double totalBill = scan.nextDouble();
         // Asks the user for their Bill amount in order to store it in a variable for calculating the tip and total bill
@@ -17,6 +17,8 @@ class Main {
         System.out.print("Number of People : ");
         int numOfPeople = scan.nextInt();
         // Ask the user for the number of people in the restaurant for future use in the calculation for tip amount and price
+
+
         double tipPercentDecimal = tipPercent/100;
         // changes the tip percentage from a whole number into a decimal so it can correctly find the tip amount
         double totalTipAmount = (totalBill * tipPercentDecimal);
@@ -27,6 +29,8 @@ class Main {
         // splits the tip amount into portions based on the number of people present in order to find the tip each person will have to pay
         double perPersonBill =  totalBillCost/numOfPeople;
         // converts the total bill with tax to a per-person bill by finding the quotient between the bill and amount of people
+
+
         DecimalFormat format = new DecimalFormat("0.00");
         // Sets up the format required to round the amount of money to the nearest hundredth
         System.out.println("---------------------------------------------------");

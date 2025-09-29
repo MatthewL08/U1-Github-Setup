@@ -8,38 +8,39 @@ class Main {
         System.out.println("---------------------------------------------------------------");
         System.out.println("Do not use any symbols when imputing the data below w/o $ or % |");
         System.out.println("---------------------------------------------------------------");
-        System.out.print("What is your Bill amount($) : ");
+        System.out.print("What is your Bill amount ($) : ");
         double totalBill = scan.nextDouble();
-        // Ask the user for their bill amount for future use in the calculation for tip amount and price
-
+        // Asks the user for their Bill amount in order to store it in a variable for calculating the tip and total bill
         System.out.print("What is your Tip percentage : ");
         double tipPercent = scan.nextDouble();
-
-        // Ask the user for their tip amount for future use in the calculation for tip amount and price
+        // Ask the user for their tip percentage to store in a variable for future use in the calculation for tip amount
         System.out.print("Number of People : ");
         int numOfPeople = scan.nextInt();
         // Ask the user for the number of people in the restaurant for future use in the calculation for tip amount and price
-
         double tipPercentDecimal = tipPercent/100;
-        // changes the tip amount from a number into a decimal to correctly uses convert from a percentage
+        // changes the tip percentage from a whole number into a decimal so it can correctly find the tip amount
         double totalTipAmount = (totalBill * tipPercentDecimal);
-        // multiplies the bill amount with the tip percentage for the product equal to the amount of tip across all people
+        // uses the tip percentage to covert the bill into the total tip amount of the bill to answer the users question and calculating the total bill
         double totalBillCost = totalTipAmount + totalBill;
-        // combines the total bill before tac with the tax generated from the desired input amounts.
+        // combines the total bill before tax with the tax in order to find the generated total cost of the bill
         double perPersonTip =  totalTipAmount/numOfPeople;
-        // splits the tip amount into portions based on the number of people present
+        // splits the tip amount into portions based on the number of people present in order to find the tip each person will have to pay
         double perPersonBill =  totalBillCost/numOfPeople;
-        // converts the total bill with tax to a per person bill by finding the quotient between the bill and amount of people
-
-        DecimalFormat df2 = new DecimalFormat("0.00");
+        // converts the total bill with tax to a per-person bill by finding the quotient between the bill and amount of people
+        DecimalFormat format = new DecimalFormat("0.00");
+        // Sets up the format required to round the amount of money to the nearest hundredth
         System.out.println("---------------------------------------------------");
-        System.out.println("|Total tip amount: $" + df2.format(totalTipAmount) + "                           |");
+        System.out.println("|Total tip amount: $" + format.format(totalTipAmount) + "                          |");
+        // the information type is stated before using the decimal format to round any extra decimal places so that the tip amount is clear before stating it
         System.out.println("--------------------------------------------------");
-        System.out.println("|Total bill cost: $" + df2.format(totalBillCost) + "                           |");
+        System.out.println("|Total bill cost: $" + format.format(totalBillCost) + "                          |");
+        // the information type is stated before using the decimal format to round any extra decimal places so that the total bill cost is clear before stating it
         System.out.println("---------------------------------------------------");
-        System.out.println("|Tip per Person: $" +  df2.format(perPersonTip) + "                             |");
+        System.out.println("|Tip per Person: $" +  format.format(perPersonTip) + "                             |");
+        // the information type is stated before using the decimal format to round any extra decimal places so that the tip each person pays is clear before stating it
         System.out.println("---------------------------------------------------");
-        System.out.println("Total bill per person: $" +  df2.format(perPersonBill) + "                      |");
+        System.out.println("Total bill per person: $" +  format.format(perPersonBill) + "                      |");
+        // the information type is stated before using the decimal format to round any extra decimal places so that the split each person will pay of the bill is clear before stating it
         System.out.println("---------------------------------------------------");
     }
 }

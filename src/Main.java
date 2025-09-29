@@ -5,9 +5,9 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("--------------------------------------------------------");
-        System.out.println("Do not use any symbols when imputing the data below    |");
-        System.out.println("--------------------------------------------------------");
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("Do not use any symbols when imputing the data below w/o $ or % |");
+        System.out.println("---------------------------------------------------------------");
         System.out.print("What is your Bill amount($) : ");
         double totalBill = scan.nextDouble();
         // Ask the user for their bill amount for future use in the calculation for tip amount and price
@@ -23,19 +23,23 @@ class Main {
         double tipPercentDecimal = tipPercent/100;
         // changes the tip amount from a number into a decimal to correctly uses convert from a percentage
         double totalTipAmount = (totalBill * tipPercentDecimal);
+        // multiplies the bill amount with the tip percentage for the product equal to the amount of tip across all people
         double totalBillCost = totalTipAmount + totalBill;
+        // combines the total bill before tac with the tax generated from the desired input amounts.
         double perPersonTip =  totalTipAmount/numOfPeople;
+        // splits the tip amount into portions based on the number of people present
         double perPersonBill =  totalBillCost/numOfPeople;
+        // converts the total bill with tax to a per person bill by finding the quotient between the bill and amount of people
 
         DecimalFormat df2 = new DecimalFormat("0.00");
-        System.out.println("--------------------------------------------");
-        System.out.println("|Total tip amount: $" + df2.format(totalTipAmount) + "                    |");
-        System.out.println("--------------------------------------------");
-        System.out.println("|Total bill cost: $" + df2.format(totalBillCost) + "                    |");
-        System.out.println("--------------------------------------------");
-        System.out.println("|Tip per Person: $" +  df2.format(perPersonTip) + "                      |");
-        System.out.println("--------------------------------------------");
-        System.out.println("Total bill per person: $" +  df2.format(perPersonBill) + "               |");
-        System.out.println("--------------------------------------------");
+        System.out.println("---------------------------------------------------");
+        System.out.println("|Total tip amount: $" + df2.format(totalTipAmount) + "                           |");
+        System.out.println("--------------------------------------------------");
+        System.out.println("|Total bill cost: $" + df2.format(totalBillCost) + "                           |");
+        System.out.println("---------------------------------------------------");
+        System.out.println("|Tip per Person: $" +  df2.format(perPersonTip) + "                             |");
+        System.out.println("---------------------------------------------------");
+        System.out.println("Total bill per person: $" +  df2.format(perPersonBill) + "                      |");
+        System.out.println("---------------------------------------------------");
     }
 }

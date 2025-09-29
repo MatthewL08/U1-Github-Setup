@@ -14,7 +14,7 @@ class Main {
         System.out.print("What is your Tip percentage : ");
         double tipPercent = scan.nextDouble();
         // Ask the user for their tip percentage to store in a variable for future use in the calculation for tip amount
-        System.out.print("Number of People : ");
+        System.out.print("How many people are present : ");
         int numOfPeople = scan.nextInt();
         // Ask the user for the number of people in the restaurant for future use in the calculation for tip amount and price
 
